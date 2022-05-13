@@ -7,11 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NOMICS</title>
   <link rel="stylesheet" href="./CSS/styles.css">
-  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+  <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
 </head>
 
 <body>
-  <div class="wrapper"></div>
   <nav class="site-nav grid">
     <h1>NOMICS</h1>
     <ul>
@@ -20,15 +21,16 @@
       <li><a href="#contact">Profile</a></li>
     </ul>
   </nav>
-  <section id="welcome" class="grid">
-    <div class="welcome-text">
+  <section id="welcome">
+    <div id="myGrid" class="ag-theme-balham welcome-grid" style="height: 100vh;"></div>
+    <!-- <div class="welcome-text">
       <h2>Space Enthusiast<br />& JavaScript Developer</h2>
       <p class="leading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo consequat.</p>
       <a href="#portfolio" class="button">View my work</a>
     </div>
     <div class="welcome-img">
       <img src="assets/banner_image.png" alt="pic of planet">
-    </div>
+    </div> -->
   </section>
   <section id="portfolio">
     <h3>Some of my Projects</h3>
@@ -79,7 +81,10 @@
       <textarea placeholder='YOUR MESSAGE'></textarea>
       <button class="button">Send Flare</button>
     </form>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.704876479315!2d-58.408557685194!3d-34.63689756676064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc5bd89063%3A0x732e77c526844ecd!2sNEORIS!5e0!3m2!1ses-419!2sar!4v1652468328200!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.704876479315!2d-58.408557685194!3d-34.63689756676064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc5bd89063%3A0x732e77c526844ecd!2sNEORIS!5e0!3m2!1ses-419!2sar!4v1652468328200!5m2!1ses-419!2sar"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
   <footer>
     <div class="grid">
@@ -90,8 +95,7 @@
       </ul>
     </div>
   </footer>
-  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-<script src="./JS/index.js"></script>
+  <script src="./JS/index.js"></script>
 
 </body>
 

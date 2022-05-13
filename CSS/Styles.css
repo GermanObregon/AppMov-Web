@@ -123,18 +123,24 @@ h4 {
 #welcome {
   padding: 0 20px 20px 20px;
 }
-
+/* 
 .welcome-text {
   grid-column: 1/6;
+}
+
+.welcome-img {
+  grid-column: 6/9;
+} */
+
+.welcome-grid {
+  grid-column: 1;
 }
 
 .welcome-img text a {
   margin: 20px 0;
 }
 
-.welcome-img {
-  grid-column: 6/9;
-}
+
 
 .welcome-img img {
   width: 200%;
