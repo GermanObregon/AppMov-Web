@@ -49,7 +49,7 @@ new agGrid.Grid(eGridDiv, gridOptions);
 
 const fetchData = async () => {
   try {
-    let Filter = "BTC,ETH,XRP,USDT";
+    let Filter = "BTC,ETH,USDT,USDC";
     let Currency = "USD";
     const res = await GetData(Currency, Filter);
     crearCards(res);
@@ -58,11 +58,10 @@ const fetchData = async () => {
   }
 }
 
-
-
 const crearCards = data => {
   data.forEach(cripto => {
     templateCard.querySelector('h4').textContent = cripto.currency;
+    templateCard.querySelector('p').textContent = formatter.format(cripto.price);
     templateCard.querySelector('img').setAttribute("src", cripto.logo_url);
 
     const clone = templateCard.cloneNode(true);
@@ -70,5 +69,10 @@ const crearCards = data => {
   });
   items.appendChild(fragment)
 }
+
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
 
 
