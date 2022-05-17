@@ -52,7 +52,8 @@ const armarGrilla = async() => {
     /* {headerName: '7D Prediccion', field: '7dPrediction'}, */
     {headerName: 'Tapa del Mercado', field: 'marketCap'},
     {headerName: 'Volumen', field: 'volume'},
-    {headerName: 'Imagen', field: 'image', cellRenderer : AgregarLogo}
+    {headerName: 'Imagen', field: 'image', cellRenderer : AgregarLogo},
+    {headerName: 'Favorito', field: 'Registered', cellRenderer : CheckboxRenderer}
     /* {headerName: '1D grafico', field: '1dChart'}, */
     /* {headerName: 'CSV Datos', field: 'csvData'}, */
     ];
@@ -95,6 +96,38 @@ const AgregarLogo = (params) => {
     
     return element;
   };
+
+function CheckboxRenderer() {}
+
+CheckboxRenderer.prototype.init = function(params) {
+  this.params = params;
+
+  this.eGui = document.createElement('input');
+  this.eGui.type = 'checkbox';
+  this.eGui.checked = params.value;
+
+  this.checkedHandler = this.checkedHandler.bind(this);
+  this.eGui.addEventListener('click', this.checkedHandler);
+}
+
+CheckboxRenderer.prototype.checkedHandler = function(e) {
+  let checked = e.target.checked;
+  let colId = this.params.column.colId;
+  this.params.node.setDataValue(colId, checked);
+  if (checked === true){
+    alert("Agregado a Favoritos");
+
+  }
+  
+}
+
+CheckboxRenderer.prototype.getGui = function(params) {
+  return this.eGui;
+}
+
+CheckboxRenderer.prototype.destroy = function(params) {
+  this.eGui.removeEventListener('click', this.checkedHandler);
+}
 
 
 // const columnDefs = [
