@@ -44,7 +44,7 @@ const armarGrilla = async() => {
     /* {headerName: '7D Prediccion', field: '7dPrediction'}, */
     {headerName: 'Tapa del Mercado', field: 'marketCap'},
     {headerName: 'Volumen', field: 'volume'},
-    {headerName: 'Imagen', field: 'image'}
+    {headerName: 'Imagen', field: 'image', cellRenderer : AgregarLogo}
     /* {headerName: '1D grafico', field: '1dChart'}, */
     /* {headerName: 'CSV Datos', field: 'csvData'}, */
     ];
@@ -74,6 +74,19 @@ const armarGrilla = async() => {
 
 }
 
+const AgregarLogo = (params) => {
+    const element = document.createElement('span');
+    const imageElement = document.createElement('img');
+    console.log(params.value)
+    imageElement.src = params.value
+    imageElement.width = 15;
+    imageElement.hight = 15;
+  
+    
+    element.appendChild(imageElement);
+    
+    return element;
+  };
 
 
 
