@@ -8,21 +8,18 @@ const fragment = document.createDocumentFragment();
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchData();
+  armarGrilla();
+
 });
 
 
-window.onload = () =>{
-   
-  armarGrilla();
 
-};
 const cargarDatos = async () => {
   let Filter = "BTC,ETH,XRP";
   let Currency="USD";
   let Response = await GetData(Currency , Filter);
 
   let criptos =[];
-  console.log(Response);
   Response.forEach((element,index) => {
       let cripto = {
           nombre: element.name,
@@ -49,13 +46,10 @@ const armarGrilla = async() => {
     {headerName: 'Nombre', field: 'name'},
     {headerName: 'Precio', field: 'price'},
     {headerName: '1D Cambio', field: 'firstdChange'},
-    /* {headerName: '7D Prediccion', field: '7dPrediction'}, */
     {headerName: 'Tapa del Mercado', field: 'marketCap'},
     {headerName: 'Volumen', field: 'volume'},
     {headerName: 'Imagen', field: 'image', cellRenderer : AgregarLogo},
     {headerName: 'Favorito', field: 'Registered', cellRenderer : CheckboxRenderer}
-    /* {headerName: '1D grafico', field: '1dChart'}, */
-    /* {headerName: 'CSV Datos', field: 'csvData'}, */
     ];
 
   const rowsData = [];
@@ -86,7 +80,6 @@ const armarGrilla = async() => {
 const AgregarLogo = (params) => {
     const element = document.createElement('span');
     const imageElement = document.createElement('img');
-    console.log(params.value)
     imageElement.src = params.value
     imageElement.width = 15;
     imageElement.hight = 15;
@@ -129,41 +122,6 @@ CheckboxRenderer.prototype.destroy = function(params) {
   this.eGui.removeEventListener('click', this.checkedHandler);
 }
 
-
-// const columnDefs = [
-//   { headerName: '#', field: 'id' },
-//   { headerName: 'Nombre', field: 'name' },
-//   { headerName: 'Precio', field: 'price' },
-//   { headerName: '1D Cambio', field: '1dChange' },
-//   { headerName: '7D Prediccion', field: '7dPrediction' },
-//   { headerName: 'Tapa del Mercado', field: 'marketCap' },
-//   { headerName: 'Volumen', field: 'volume' },
-//   { headerName: '1D grafico', field: '1dChart' },
-//   { headerName: 'CSV Datos', field: 'csvData' },
-// ];
-// const rowData = [
-//   { make: 'Toyota', model: 'Celica', price: 35000 },
-//   { make: 'Ford', model: 'Mondeo', price: 32000 },
-//   { make: 'Porsche', model: 'Boxter', price: 72000 }
-// ];
-// const gridOptions = {
-//   columnDefs: columnDefs,
-//   rowData: rowData
-// };
-
-// const eGridDiv = document.querySelector('#myGrid');
-// new agGrid.Grid(eGridDiv, gridOptions);
-
-/* API */
-
-// let boton = document.getElementById("datos");
-// boton.addEventListener('click', async () => {
-//   let Filter = "BTC,ETH,XRP";
-//   let Currency = "USD";
-//   let Response = await GetData(Currency, Filter);
-
-//   console.log(Response);
-// })
 
 /* API CARDS */
 
