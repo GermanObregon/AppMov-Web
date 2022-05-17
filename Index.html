@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
+  <script type="module" src="./JS/index.js"></script>
 </head>
 
 <body>
@@ -49,42 +50,29 @@
       </a>
     </div>
   </section>
-  <section id="skills">
-    <h3>Things I Can Do</h3>
-    <ul class="grid">
-      <li>
-        <img src="assets/comet_1.svg" alt="comet">
-        <h4>JavaScript</h4>
-      </li>
-      <li>
-        <img src="assets/comet_2.svg" alt="comet">
-        <h4>React</h4>
-      </li>
-      <li>
-        <img src="assets/comet_3.svg" alt="comet">
-        <h4>Firebase</h4>
-      </li>
-      <li>
-        <img src="assets/comet_4.svg" alt="comet">
-        <h4>Flutter</h4>
-      </li>
-    </ul>
-    <p class="leading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lacus diam. Mauris
-      fringilla consectetur nibh, sit amet tempus augue.</p>
+  <section id="criptos">
+    <ul class="grid" id="items"></ul>
+    <h3>Principales criptomonedas</h3>
+    <p class="leading">Principales criptomonedas por capitalización de mercado</p>
   </section>
   <section id="contact">
-    <h3>Get In Touch</h3>
-    <p class="leading">Lorem ipsum dolor sit amet, consectetur.</p>
-    <form>
-      <input type="text" placeholder='NAME'>
-      <input type="email" placeholder='EMAIL'>
-      <textarea placeholder='YOUR MESSAGE'></textarea>
-      <button class="button">Send Flare</button>
-    </form>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.704876479315!2d-58.408557685194!3d-34.63689756676064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc5bd89063%3A0x732e77c526844ecd!2sNEORIS!5e0!3m2!1ses-419!2sar!4v1652468328200!5m2!1ses-419!2sar"
-      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h3>Estamos para ayudarte</h3>
+    <p class="leading">Nuestros asesores están capacitados para atender tus dudas y consultas.</p>
+    <ul class="grid-contact">
+      <li>
+        <form>
+          <input type="text" placeholder='Nombre'>
+          <input type="email" placeholder='Email'>
+          <textarea placeholder='Comentario'></textarea>
+          <button class="button">ENVIAR</button>
+        </form>
+      </li>
+      <li>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.704876479315!2d-58.408557685194!3d-34.63689756676064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc5bd89063%3A0x732e77c526844ecd!2sNEORIS!5e0!3m2!1ses-419!2sar!4v1652468328200!5m2!1ses-419!2sar"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </li>
+    </ul>
   </section>
   <footer>
     <div class="grid">
@@ -95,8 +83,13 @@
       </ul>
     </div>
   </footer>
-  <script src="./JS/index.js"></script>
 
+  <template id="cards">
+    <li>
+      <img src="assets/comet_1.svg" alt="comet">
+      <h4>JavaScript</h4>
+    </li>
+  </template>
 </body>
 
 </html>
