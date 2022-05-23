@@ -7,41 +7,56 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NOMICS</title>
   <link rel="stylesheet" href="./CSS/styles.css">
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHckZVlV-pqgi6E6AHUAIVdjITD70P5I4&callback=initMap&v=weekly"
+    defer></script>
   <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
   <script type="module" src="./JS/index.js"></script>
-
+  <script type="module" src="./JS/maps.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="site-nav grid" id="menu">
-    <h1>NOMICS</h1>
-    <ul id="carrito">
-      <li><a href="#"><i class="fa-regular fa-user"></i></a>
-        <ul id="favoritos">
-          <li><a href="#">Enlace 2.1</a></li>
-          <li><a href="#">Enlace 2.2</a></li>
-          <li><a href="#">Enlace 2.3</a></li>
+  <header>
+    <div class="container">
+      <nav class="nav_checkbox" id="menu">
+        <a href="#" class="logo">
+          <h2>NOMICS</h2>
+        </a>
+        <input type="checkbox" id="tab-nav" class="tab-nav">
+        <label for="tab-nav" class="label">
+          <div class="burger"></div>
+          <div class="burger"></div>
+          <div class="burger"></div>
+        </label>
+        <ul class="content_nav" id="carrito">
+          <li><a href="#criptos">Cotizaciones</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#"><i class="fa-regular fa-user"></i></a>
+            <ul id="favoritos">
+              <li><a href="#">Enlace 2.1</a></li>
+              <li><a href="#">Enlace 2.2</a></li>
+              <li><a href="#">Enlace 2.3</a></li>
+            </ul>
+          </li>
         </ul>
-      </li>
-      <li><a href="#criptos">Cotizaciones</a></li>
-      <li><a href="#contact">Contacto</a></li>
-
-    </ul>
-  </nav>
-  <section id="welcome">
-    <div id="ctn-bars-search">
-      <input type="text" id="inputSearch" placeholder="¿Que criptomoneda desea buscar?">
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>HTML</a></li>
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>HTML</a></li>
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>HTML</a></li>
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>HTML</a></li>
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>HTML</a></li>
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>HTML</a></li>
-      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>HTML</a></li>
+      </nav>
     </div>
+  </header>
+  <div class="wrapper">
+    <div class="search-input">
+      <a href="" target="_blank" hidden></a>
+      <input type="text" placeholder="Buscar...">
+      <div class="autocom-box">
+
+      </div>
+      <div class="icon"><i class="fas fa-search"></i></div>
+    </div>
+  </div>
+  <section id="welcome">
+ 
   </section>
   <section id="criptos">
     <h3>Principales criptomonedas</h3>
@@ -61,9 +76,7 @@
         </form>
       </li>
       <li>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.704876479315!2d-58.408557685194!3d-34.63689756676064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc5bd89063%3A0x732e77c526844ecd!2sNEORIS!5e0!3m2!1ses-419!2sar!4v1652468328200!5m2!1ses-419!2sar"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="map" class="iframe"></div>
       </li>
     </ul>
   </section>
@@ -90,6 +103,7 @@
   </template>
   <script src="./JS/carrito.js"></script>
   <script src="./JS/favoritos.js"></script>
+  <script src="./JS/filter.js"></script>
 </body>
 
 </html>
