@@ -19,14 +19,21 @@ class Carrito {
 
     //muestra producto seleccionado en carrito
     insertarCarrito(producto) {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <li>
-            ${producto.nombre} - ${producto.precio}<a href="#" class="borrar-producto" data-id="${producto.id}"><i class="fa-solid fa-circle-xmark"></i></a>
-            </li>
-        `;
-        listaProductos.appendChild(row);
-        this.guardarProductosLocalStorage(producto);
+        const even = element => element.id === producto.id;
+        let list = this.obtenerProductosLocalStorage();
+
+        if (!list.some(even)){
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <li>
+                ${producto.nombre} - ${producto.precio}<a href="#" class="borrar-producto" data-id="${producto.id}"><i class="fa-solid fa-circle-xmark"></i></a>
+                </li>
+            `;
+            listaProductos.appendChild(row);
+            this.guardarProductosLocalStorage(producto);
+
+        }
+       
 
     }
 
