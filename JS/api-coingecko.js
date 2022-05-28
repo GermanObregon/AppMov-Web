@@ -24,10 +24,10 @@ const data = {
         {
             label: 'Cubic interpolation (monotone)',
             data: datapoints,
-            borderColor: '#07083e',
+            borderColor: '#dddbff',
             fill: false,
             cubicInterpolationMode: 'monotone',
-            tension: 0.4
+            tension: 0.1
         }
     ]
 };
@@ -41,7 +41,9 @@ const myChart = new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'Chart.js Line Chart - Cubic interpolation mode'
+                text: 'Chart.js Line Chart - Cubic interpolation mode',
+                borderColor: '#dddbff',
+                color: '#dddbff',
             },
         },
         interaction: {

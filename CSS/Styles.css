@@ -99,7 +99,6 @@ textarea {
 
 /*MOBILE STYLE */
 
-
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -178,10 +177,8 @@ textarea {
   margin-top: 10px;
 }
 
-
-
 /* PUBLICITY */
-#publicity{
+#publicity {
   text-align: center;
 }
 
@@ -320,7 +317,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  
 }
 
 .logo {
@@ -363,8 +359,6 @@ header {
   text-decoration: none;
   color: white;
   position: relative;
-  
-  
 }
 
 .content_nav li a::after {
@@ -504,7 +498,7 @@ header {
     padding: 15px 0px;
   }
 
-  #publicity{
+  #publicity {
     display: none;
   }
 }
@@ -520,7 +514,7 @@ header {
     background-size: 20%;
   }
 
-  #publicity{
+  #publicity {
     display: none;
   }
 }
@@ -571,7 +565,7 @@ header {
     background-size: 25%;
   }
 
-  #publicity{
+  #publicity {
     display: none;
   }
 }
@@ -601,7 +595,35 @@ header {
     width: 30px;
   }
 
-  #publicity{
+  #publicity {
     display: block;
+  }
+}
+
+.chart-grid {
+  display: grid;
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+.chart-grid .col {
+  background-color: var(--secondary);
+  padding: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .chart-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .chart-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .chart-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
