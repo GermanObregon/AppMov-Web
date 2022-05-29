@@ -14,6 +14,7 @@ export const GetDataCoingecko = async () => {
         let API_ADDRESS = `https://api.coingecko.com/api/v3/coins/list`
         const respuesta = await fetch(API_ADDRESS);
         const datos = await respuesta.json();
+        console.log(datos);
         return datos;
     }catch(error){
 
