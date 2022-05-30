@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NOMICS</title>
-  <link rel="stylesheet" href="./CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHckZVlV-pqgi6E6AHUAIVdjITD70P5I4&callback=initMap&v=weekly"
     defer></script>
@@ -14,9 +14,8 @@
   <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-balham.css">
-  <script type="module" src="./JS/index.js"></script>
-  <script type="module" src="./JS/api-coingecko.js"></script>
-  <script type="module" src="./JS/maps.js"></script>
+  <!-- <script type="module" src="../JS/index.js"></script> -->
+  <script type="module" src="../JS/user/user.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -35,17 +34,17 @@
           <div class="burger"></div>
         </label>
         <ul class="content_nav" id="carrito">
-          <li><a href="#criptos">Cotizaciones</a></li>
-          <li><a href="#contact">Contacto</a></li>
-          <li><a id ="fav" href="#">Favoritos</a>
+          <li><a href="../index.html">Cotizaciones</a></li>
+          <li><a href="./contact.html">Contacto</a></li>
+          <li><a id="fav">Favoritos</a>
             <ul id="favoritos">
             </ul>
           </li>
+          <li><a href="./user.html">Usuarios</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
   <section id="publicity"><a
       href="https://lfcgoclx.nomics.com/redirect.spark?MID=181003&amp;plid=1795682&amp;setID=469686&amp;channelID=0&amp;CID=659822&amp;banID=520677516&amp;PID=0&amp;textadID=0&amp;tc=1&amp;adSize=970x90&amp;mt=1653346914217081&amp;spr=1&amp;referrer=https%3A%2F%2Fnomics.com%2F&amp;hc=f38471fd56523142d40f23a67e0c68280e57bb08&amp;location="
       target="_blank" rel="nofollow"><img src="https://lfcgoclx.nomics.com/getad.img/;libID=3472773" width="970"
@@ -53,9 +52,7 @@
   </section>
   <section id="criptos">
     <div class="chart-grid">
-      <div class="col">
-        <canvas id="myChart"></canvas>
-      </div>
+      <ul class="grid" id="items"></ul>
   </div>
   </section>
   <footer>
@@ -68,21 +65,13 @@
     </div>
   </footer>
   <template id="cards">
-    <li>
-      <img src="" alt="">
-      <h4></h4>
-      <p></p>
-      <div class="card__info">
-        <p class="text--medium"></p>
-    
-        <button class="btn card__price text--medium agregar-cripto" data-id=""><i
-            class="fa-regular fa-star"></i></button>
-      </div>
-    </li>
+    <div class="col">
+      <canvas id=""></canvas>
+    </div>
   </template>
-  <script src="./JS/carrito.js"></script>
-  <script src="./JS/favoritos.js"></script>
-  <script type="module" src="./JS/filter.js"></script>
+  <script src="../JS/list-favorito.js"></script>
+  <script src="../JS/favoritos.js"></script>
+  <script type="module" src="../JS/filter.js"></script>
 </body>
 
 </html>

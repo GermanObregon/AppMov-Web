@@ -1,6 +1,6 @@
 
 'use strict';
-import { GetData } from "./Service.js"
+import { GetDataCoingecko } from "./Service.js"
 
 const items = document.getElementById('items');
 const templateCard = document.getElementById('cards').content;
@@ -128,7 +128,7 @@ const fetchData = async () => {
   try {
     let Filter = "BTC,ETH,USDT,USDC";
     let Currency = "USD";
-    const res = await GetData(Currency, Filter);
+    const res = await GetDataCoingecko();
     crearCards(res);
   } catch (error) {
     console.log(error);
@@ -138,9 +138,9 @@ const fetchData = async () => {
 const crearCards = data => {
   data.forEach(cripto => {
     templateCard.querySelector('button').setAttribute('data-id', cripto.id);
-    templateCard.querySelector('h4').textContent = cripto.currency;
-    templateCard.querySelector('p.text--medium').textContent = formatter.format(cripto.price);
-    templateCard.querySelector('img').setAttribute("src", cripto.logo_url);
+    templateCard.querySelector('h4').textContent = cripto.name;
+    templateCard.querySelector('p.text--medium').textContent = formatter.format(cripto.current_price);
+    templateCard.querySelector('img').setAttribute("src", cripto.image);
 
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);

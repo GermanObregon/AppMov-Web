@@ -21,7 +21,6 @@ class Carrito {
     insertarCarrito(producto) {
         const even = element => element.id === producto.id;
         let list = this.obtenerProductosLocalStorage();
-
         if (!list.some(even)){
             const row = document.createElement('tr');
             row.innerHTML = `
