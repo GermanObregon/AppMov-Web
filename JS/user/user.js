@@ -1,7 +1,8 @@
 'use strict';
 import { GetDataCoinCoingecko } from "../Service.js"
+
 const items = document.getElementById('items');
-const templateCard = document.getElementById('cards').content;
+const templateCard = document.getElementById('chart').content;
 const fragment = document.createDocumentFragment();
 
 document.addEventListener('DOMContentLoaded', () => {

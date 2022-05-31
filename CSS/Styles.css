@@ -263,6 +263,7 @@ footer img {
 
 #menu ul li:hover > ul {
   display: block;
+  background: var(--gris);
 }
 
 /* CARD */
@@ -626,4 +627,9 @@ header {
   .chart-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+
+td {
+  padding-right: 1rem;
 }

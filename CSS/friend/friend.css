@@ -1,0 +1,23 @@
+.grid-share {
+  display: grid;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+#error_message {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0px;
+  text-align: center;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+@media screen and (min-width: 960px) {
+  .grid-share {
+    width: 50%;
+    min-width: 1060px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}

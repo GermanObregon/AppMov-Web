@@ -21,7 +21,7 @@ class Carrito {
     insertarCarrito(producto) {
         const even = element => element.id === producto.id;
         let list = this.obtenerProductosLocalStorage();
-        if (!list.some(even)){
+        if (!list.some(even)) {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <li>
@@ -32,7 +32,7 @@ class Carrito {
             this.guardarProductosLocalStorage(producto);
 
         }
-       
+
 
     }
 
@@ -98,7 +98,7 @@ class Carrito {
                 <td>${producto.nombre}</td>
                 <td>${producto.precio}</td>
                 <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
+                    <i class="fa-solid fa-trash borrar-producto" data-id="${producto.id}"></i>
                 </td>
             `;
             listaProductos.appendChild(row);
@@ -149,5 +149,19 @@ class Carrito {
     vaciarLocalStorage() {
         localStorage.clear();
     }
-}
 
+    compartir(e) {
+        e.preventDefault();
+        if (e.target.classList.contains('compartir-cripto')) {
+            const producto = e.target.parentElement.parentElement;
+            const infoProducto = {
+                nombre: producto.querySelector('h4').textContent,
+                precio: producto.querySelector('p.text--medium').textContent
+            }
+
+            localStorage.setItem('cripto', JSON.stringify(infoProducto));
+            window.open('../pages/friend.html', '_blank').focus();
+        }
+
+    }
+}
